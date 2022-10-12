@@ -1,12 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
   const preferredScheme = localStorage.getItem("scheme");
+  const systemPreference = getSystemPreference();
+
   if (preferredScheme) {
-    return document.documentElement.setAttribute("scheme", preferredScheme);
+    return setColorScheme(preferredScheme);
   }
-  const systemPreference = window.matchMedia("(prefers-color-scheme: dark)")
-    .matches
+
+  setColorScheme(systemPreference);
+
+  window
+    .matchMedia("(prefers-color-scheme: dark")
+    .addEventListener("change", function (e) {
+      if (e.matches) {
+        return setColorScheme("dark");
+      }
+      setColorScheme("light");
+    });
+});
+
+function setColorScheme(scheme) {
+  document.documentElement.setAttribute("scheme", scheme);
+}
+
+function getSystemPreference() {
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light";
-
-  document.documentElement.setAttribute("scheme", systemPreference);
-});
+}
