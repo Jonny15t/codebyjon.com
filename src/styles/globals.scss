@@ -1,6 +1,6 @@
 @import "@fontsource/montserrat/latin.css";
 @import "@fontsource/inter/latin.css";
-@import "colors.css";
+@import "./colors.scss";
 
 /* GLOBALS AND RESETS */
 *,
@@ -24,11 +24,11 @@ h5 {
 }
 
 body {
-  color: var(--black);
-  background-color: var(--white);
+  color: $black;
+  background-color: $white;
 }
 
 [scheme="dark"] body {
-  color: var(--white);
-  background-color: var(--black);
+  color: $white;
+  background-color: $black;
 }
