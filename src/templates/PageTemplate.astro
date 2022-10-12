@@ -1,4 +1,5 @@
 ---
+import MainNav from "@/components/MainNav.astro";
 import "@/styles/globals.scss";
 
 export let title = "Welcome!";
@@ -14,6 +15,7 @@ export let title = "Welcome!";
     <title>Code by Jon | {title}</title>
   </head>
   <body>
+    <MainNav />
     <slot />
   </body>
 </html>
