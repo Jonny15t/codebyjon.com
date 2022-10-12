@@ -1,6 +1,6 @@
 ---
-import MainNav from "@/components/MainNav.astro";
 import "@/styles/globals.scss";
+import MainNav from "@/components/MainNav.svelte";
 
 export let title = "Welcome!";
 ---
@@ -15,7 +15,7 @@ export let title = "Welcome!";
     <title>Code by Jon | {title}</title>
   </head>
   <body>
-    <MainNav />
+    <MainNav client:load />
     <slot />
   </body>
 </html>

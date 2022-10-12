@@ -1,6 +1,6 @@
----
-import Switch from "./Switch.astro";
----
+<script>
+  import Switch from "./Switch.svelte";
+</script>
 
 <nav>
   <Switch />

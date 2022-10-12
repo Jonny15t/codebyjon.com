@@ -1,18 +1,22 @@
----
-interface Props {
-  name?: String;
-}
+<script lang="ts">
+  interface Props {
+    name?: string;
+    onChange?: () => void;
+    checked?: boolean;
+  }
 
-const { name } = Astro.props;
----
+  export let name: Props["name"] = undefined;
+  export let checked: Props["checked"] = false;
+  export let onChange: Props["onChange"] = undefined;
+</script>
 
 <label>
-  <input type="checkbox" />
+  <input type="checkbox" name={name} on:change={onChange} bind:checked={checked} />
   <span class="switch"></span>
 </label>
 
 <style lang="scss">
-  @import "@/styles/colors.scss";
+  @import "../styles/colors.scss";
 
   label {
     user-select: none;
