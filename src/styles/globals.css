@@ -1,0 +1,22 @@
+@import "@fontsource/montserrat/latin.css";
+@import "@fontsource/inter/latin.css";
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: Inter;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: Montserrat;
+}
