@@ -1,6 +1,8 @@
 @import "@fontsource/montserrat/latin.css";
 @import "@fontsource/inter/latin.css";
+@import "colors.css";
 
+/* GLOBALS AND RESETS */
 *,
 *::before,
 *::after {
@@ -19,4 +21,14 @@ h3,
 h4,
 h5 {
   font-family: Montserrat;
+}
+
+body {
+  color: var(--black);
+  background-color: var(--white);
+}
+
+[scheme="dark"] body {
+  color: var(--white);
+  background-color: var(--black);
 }
